@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('psJwtApp').controller('RegisterCtrl', function ($scope, alert, $auth) {
+angular.module('Mean-Commerce').controller('RegisterCtrl', function ($scope, alert, $auth) {
 	$scope.submit = function () {
 		$auth.signup({
 			email: $scope.email,
