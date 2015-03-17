@@ -1,0 +1,13 @@
+{
+    "name": "Mean-Commerce",
+    "version": "1.0.0",
+    "dependencies": {
+        "bootstrap": "latest",
+        "font-awesome": "latest",
+        "animate.css": "latest",
+        "angular": "latest",
+	"angular-animate": "latest",
+	"satellizer": "latest",
+        "angular-ui-router": "latest"   
+    }
+}
