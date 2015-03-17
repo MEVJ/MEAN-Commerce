@@ -5,6 +5,9 @@ This is work in progress and will be updated as the development progresses.
 ## Local Setup
 You will need to reploicate the setup on your local machine to preview the project.
 Download or clone the project from Git,once dowloaded run the below commands
+```
+cd MEAN-Commerce
+```
 
 ```
 npm install
