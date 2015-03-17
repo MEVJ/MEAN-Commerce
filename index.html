@@ -9,12 +9,12 @@
     <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
     <!-- build:css(.) styles/vendor.css -->
     <!-- bower:css -->
-    <link rel="stylesheet" href="lib/bootstrap/css/bootstrap.css" />
+    <link rel="stylesheet" href="lib/bootstrap/dist/css/bootstrap.css" />
     <link rel="stylesheet" href="lib/animate.css/animate.css" />
     <!-- endbower -->
     <!-- endbuild -->
     <!-- build:css(.tmp) styles/main.css -->
-	<link rel="stylesheet" href="styles/bootstrap-hero.css" /> 
+	<link rel="stylesheet" href="styles/bootstrap-hero.css" />
     <link rel="stylesheet" href="styles/main.css">
     <!-- endbuild -->
 </head>
@@ -28,7 +28,7 @@
     <!-- Add your site or application content here -->
 	<div ng-include="'views/header.html'"></div>
     <div class="container" ng-cloak>
-       
+
         <div class="row">
             <div class="ui-view-container">
                 <div ui-view></div>
@@ -67,11 +67,11 @@
 
     <!-- build:js(.) scripts/vendor.js -->
     <!-- bower:js -->
-    <script src="lib/jquery/jquery.js"></script>
+    <script src="lib/jquery/dist/jquery.js"></script>
     <script src="lib/angular/angular.js"></script>
-    <script src="lib/bootstrap/js/bootstrap.js"></script>
-    <script src="lib/angular/angular-ui-router.js"></script>
-    <script src="lib/angular/angular-animate.js"></script>
+    <script src="lib/bootstrap/dist/js/bootstrap.js"></script>
+    <script src="lib/angular-ui-router/release/angular-ui-router.js"></script>
+    <script src="lib/angular-animate/angular-animate.js"></script>
     <script src="lib/satellizer/satellizer.js"></script>
     <!-- endbower -->
     <!-- endbuild -->
@@ -85,7 +85,7 @@
     <script src="scripts/services/authtoken.js"></script>
     <script src="scripts/controllers/header.js"></script>
     <script src="scripts/controllers/logout.js"></script>
-    <script src="scripts/controllers/jobs.js"></script>
+    <script src="scripts/controllers/cart.js"></script>
     <script src="scripts/services/authinterceptor.js"></script>
     <script src="scripts/controllers/login.js"></script>
     <script src="scripts/services/auth.js"></script>
@@ -93,14 +93,3 @@
 </body>
 
 </html>
-
-
-
-
-
-
-
-
-
-
-
