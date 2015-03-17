@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('psJwtApp').factory('authToken', function($window) {
+angular.module('Mean-Commerce').factory('authToken', function($window) {
     var storage = $window.localStorage;
     var cachedToken;
     var userToken = 'userToken';
