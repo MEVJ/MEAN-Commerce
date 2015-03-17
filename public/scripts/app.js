@@ -1,4 +1,4 @@
 'use strict';
 
 angular
-	.module('psJwtApp', ['ui.router', 'ngAnimate', 'satellizer']);
+	.module('Mean-Commerce', ['ui.router', 'ngAnimate', 'satellizer']);
