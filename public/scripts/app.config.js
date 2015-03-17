@@ -1,4 +1,4 @@
-angular.module('psJwtApp').config(function ($urlRouterProvider, $stateProvider, $httpProvider, $authProvider, API_URL) {
+angular.module('Mean-Commerce').config(function ($urlRouterProvider, $stateProvider, $httpProvider, $authProvider, API_URL) {
 
 	$urlRouterProvider.otherwise('/');
 
@@ -21,10 +21,10 @@ angular.module('psJwtApp').config(function ($urlRouterProvider, $stateProvider, 
 		controller: 'LoginCtrl'
 	})
 
-	.state('jobs', {
-		url: '/jobs',
-		templateUrl: '/views/jobs.html',
-		controller: 'JobsCtrl'
+	.state('cart', {
+		url: '/cart',
+		templateUrl: '/views/cart.html',
+		controller: 'cartCtrl'
 	})
 
 	.state('logout', {
@@ -36,12 +36,12 @@ angular.module('psJwtApp').config(function ($urlRouterProvider, $stateProvider, 
 	$authProvider.signupUrl = API_URL + 'auth/register';
 
 	$authProvider.google({
-		clientId: '755194447289-i6qu5n18jnh4lhph17j19cq08i0fq6f4.apps.googleusercontent.com',
+		clientId: 'Your client ID',
 		url: API_URL + 'auth/google'
 	})
 
 	$authProvider.facebook({
-		clientId: '698580886903269',
+		clientId: 'Your client ID',
 		url: API_URL + 'auth/facebook'
 	})
 
