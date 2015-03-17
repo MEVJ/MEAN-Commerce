@@ -1,7 +1,8 @@
 # MEAN-Commerce
 MEAN eCommerce
 
-Clone or download the package to your local and run the below to install dependencies
+Clone or download the package to your local and run the below to install dependencies.
+
 npm install
 
 bower install
