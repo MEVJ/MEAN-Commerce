@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('psJwtApp').directive('validateEquals', function() {
+angular.module('Mean-Commerce').directive('validateEquals', function() {
   return {
     require: 'ngModel',
     link: function(scope, element, attrs, ngModelCtrl) {
