@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('psJwtApp').service('alert', function alert($rootScope, $timeout) {
+angular.module('Mean-Commerce').service('alert', function alert($rootScope, $timeout) {
     var alertTimeout;
 
     //    $rootScope.$on('$stateChangeStart',
