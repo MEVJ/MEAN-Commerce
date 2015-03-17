@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('psJwtApp').service('auth', function auth($http, API_URL, authToken, $state, $window, $q) {
+angular.module('Mean-Commerce').service('auth', function auth($http, API_URL, authToken, $state, $window, $q) {
 
 	function authSuccessful(res) {
 		authToken.setToken(res.token);
