@@ -1,12 +1,22 @@
 # MEAN-Commerce
-MEAN eCommerce
+This is the repository for MEAN eCommerce project.You can download and modify as you wish.
+This is work in progress and will be updated as the development progresses.
 
-Clone or download the package to your local and run the below to install dependencies.
+## Local Setup
+You will need to reploicate the setup on your local machine to preview the project.
+Download or clone the project from Git,once dowloaded run the below commands
 
+```
 npm install
+```
 
+```
 bower install
+```
 
+```
 node app
+```
 
-Check in browser http://localhost:8080/
+Open the browser and type in  http://localhost:8080/, voila you get the page with default template.
+Feel free to modify adn play around.
