@@ -19,4 +19,4 @@ node app
 ```
 
 Open the browser and type in  http://localhost:8080/, voila you get the page with default template.
-Feel free to modify adn play around.
+Feel free to modify and play around.
