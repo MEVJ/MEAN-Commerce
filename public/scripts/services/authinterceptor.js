@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('psJwtApp').factory('authInterceptor', function(authToken) {
+angular.module('Mean-Commerce').factory('authInterceptor', function(authToken) {
     return {
         request: function(config) {
             var token = authToken.getToken();
