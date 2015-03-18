@@ -48,7 +48,7 @@ angular.module('Mean-Commerce').config(function ($urlRouterProvider, $stateProvi
 	$httpProvider.interceptors.push('authInterceptor');
 })
 
-.constant('API_URL', 'http://localhost:1337/')
+.constant('API_URL', 'http://localhost:3000/')
 
 .run(function ($window) {
 	var params = $window.location.search.substring(1);
