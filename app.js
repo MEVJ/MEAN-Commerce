@@ -1,68 +1,72 @@
 var express = require('express');
+var bodyParser = require('body-parser');
+var mongoose = require('mongoose');
+var jwt = require('jwt-simple');
+var passport = require('passport');
+var cors = require('cors');
 var path = require('path');
 var favicon = require('serve-favicon');
-var logger = require('morgan');
-var cookieParser = require('cookie-parser');
-var bodyParser = require('body-parser');
-
-//var routes = require('./routes/index');
-//var users = require('./routes/users');
+var createSendToken = require('./api/services/jwt.js');
+var googleAuth = require('./api/services/googleAuth.js');
+var facebookAuth = require('./api/services/facebookAuth.js');
+var localStratergy = require('./api/services/localStrategy.js');
+var myBag = require('./api/services/myBag.js');
 
 var app = express();
-//var router = express.Router();
 
-/* GET home page. */
+
+
+
+app.use(bodyParser.json());
+app.use(passport.initialize());
+passport.serializeUser(function (user, done) {
+	done(null, user.id);
+});
+
+app.use(function (req, res, next) {
+	res.header('Access-Control-Allow-Origin', '*');
+	res.header('Access-Control-Allow-Methods', 'GET,PUT,POST,DELETE');
+	res.header('Access-Control-Allow-Headers', 'Content-Type, Authorization');
+	next();
+
+});
 app.get('/',function(req,res){
-  res.sendFile(path.join(__dirname+'/index.html'));
-  //__dirname : It will resolve to your project folder.
+res.sendFile(path.join(__dirname+'/index.html'));
+//__dirname : It will resolve to your project folder.
 })
 
-// view engine setup
-//app.set('views', path.join(__dirname, 'views'));
-//app.set('view engine', 'jade');
-
-// uncomment after placing your favicon in /public
-//app.use(favicon(__dirname + '/public/favicon.ico'));
-app.use(logger('dev'));
-app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({ extended: false }));
-app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
+app.use(favicon(__dirname + '/public/favicon.ico'));
 
-//app.use('/', routes);
-//app.use('/users', users);
 
-// catch 404 and forward to error handler
-app.use(function(req, res, next) {
-  var err = new Error('Not Found');
-  err.status = 404;
-  next(err);
+var whitelist = ['http://localhost:3000','http://localhost:8000'];
+app.use(cors({
+	origin: function (origin, callback) {
+		var originIsWhitelisted = whitelist.indexOf(origin) !== -1;
+		callback(null, originIsWhitelisted);
+	},
+	credentials: true,
+	allowedHeaders: ['Content-Type', 'Authorization', 'X-Requested-With', 'Accept', 'Origin']
+}));
+
+passport.use('local-register', localStratergy.register);
+passport.use('local-login', localStratergy.login);
+app.post('/auth/register', passport.authenticate('local-register'), function (req, res) {
+	createSendToken(req.user, res);
 });
-
-// error handlers
-
-// development error handler
-// will print stacktrace
-if (app.get('env') === 'development') {
-  app.use(function(err, req, res, next) {
-    res.status(err.status || 500);
-    res.render('error', {
-      message: err.message,
-      error: err
-    });
-  });
-}
-
-// production error handler
-// no stacktraces leaked to user
-app.use(function(err, req, res, next) {
-  res.status(err.status || 500);
-  res.render('error', {
-    message: err.message,
-    error: {}
-  });
+app.post('/auth/login', passport.authenticate('local-login'), function (req, res) {
+  console.log("inside server auth/login");
+	createSendToken(req.user, res);
 });
+app.post('/auth/facebook', facebookAuth);
+app.post('/auth/google', googleAuth);
+
+app.get('/mybag', myBag);
+
+mongoose.connect('mongodb://localhost/MEAN-Commerce');
 
 
-//module.exports = app;
-app.listen('8080');
+var server = app.listen(3000, function () {
+	console.log('api listening on', server.address().port);
+
+})
