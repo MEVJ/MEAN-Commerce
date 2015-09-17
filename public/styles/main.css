@@ -207,3 +207,29 @@ vertical-align: inherit;
 table tr {
     border-bottom: 1px;
 }
+
+.panelHeight{
+height: 150px;
+overflow-y: auto;
+
+}
+.panel-default > .panel-heading-bridge {
+background: #19b698; color: #fff; }
+
+.panel-default > .panel-heading-frontend {
+background: #2980b9; color: #fff; }
+
+.panel-default > .panel-heading-ide {
+background: #8e44ad; color: #fff; }
+
+.panel-default > .panel-heading-database {
+background: #2c3e50; color: #fff; }
+
+.panel-default > .panel-heading-backend {
+background: #d35400; color: #fff; }
+
+.panel-default > .panel-heading-mobile {
+background: #27ae60; color: #fff; }
+
+.panel-default > .panel-heading-api {
+background: #f39c12; color: #fff; }
