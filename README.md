@@ -1,4 +1,4 @@
-# MEAN-Commerce
+# MEAN-Commerce-Under construction
 This is the repository for MEAN eCommerce project.You can download and modify as you wish.
 This is work in progress and will be updated as the development progresses.
 
